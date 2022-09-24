@@ -25,9 +25,9 @@ function system_paddle(){
 
 function create_ball(){
     this.x = 450;
-    this.y = 30;
+    this.y = 80;
     this.angle = 45;
-    this.speed = 8;
+    this.speed = 10;
     this.xspeed = 5;
     this.yspeed = 5;
     this.radius = 10;
@@ -69,7 +69,7 @@ function add_up2(){
 }
 
  function check_ball_collision(){
-     if((ball.y > 680) && (ball.x+ball.radius > player.x) && (ball.x-ball.radius < player.x + player.width)){
+     if((ball.y >690) && (ball.x+ball.radius > player.x) && (ball.x-ball.radius < player.x + player.width)){
         // ball.yspeed = -ball.yspeed-5;
         // add_up();
         ball.angle = 360 - ball.angle;
@@ -80,7 +80,7 @@ function add_up2(){
         // add_up();
         ball.angle = 180 - ball.angle;
         change_ball_position();
-     }else if((ball.y < 20) && (ball.x+ball.radius > com.x) && (ball.x-ball.radius < com.x + com.width)){
+     }else if((ball.y < 30) && (ball.x+ball.radius > com.x) && (ball.x-ball.radius < com.x + com.width)){
         // ball.yspeed = -ball.yspeed-5;
         // add_up();
         ball.angle = 360 - ball.angle;
@@ -106,9 +106,9 @@ function update_ball_speed(){
 }
 
 function upadte_com_paddle(){
-    if(com.x != ball.x){
-        let dx = com.x - ball.x;
-        com.x -= dx/2;
+    if(com.x != ball.x + 30){
+        let dx = com.x - ball.x + 30;
+        com.x -= dx/2 ;
     }
 
     if(com.x < 0){
